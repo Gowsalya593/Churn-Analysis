@@ -1,30 +1,26 @@
 /*
-===========================================================
 📊 CUSTOMER CHURN ANALYSIS - SQL SCRIPT
-===========================================================
+
 Database  : powerbi_db
-Purpose   : Data Import, Cleaning & Filtering
+Purpose   : Data Import, Cleaning, Validation & Analysis
 Author    : Gowsi
-===========================================================
 */
--- =========================================================
--- 1️⃣ USE DATABASE
--- =========================================================
+
+-- 1️⃣ SET DATABASE
 USE powerbi_db;
 
--- =========================================================
 -- 2️⃣ VIEW RAW DATA
--- =========================================================
 SELECT * FROM customer_data;
 
--- Count total records
-SELECT COUNT(*) AS total_records FROM customer_data;
+SELECT COUNT(*) AS total_records 
+FROM customer_data;
 
 
--- =========================================================
--- 3️⃣ IMPORT DATA FROM CSV (RUN IN CMD / MYSQL CLI)
--- =========================================================
-
+-- 3️⃣ IMPORT DATA FROM CSV (RUN IN MYSQL CLI)
+/*
+NOTE:
+Ensure 'local_infile' is enabled before running this command.
+*/
 LOAD DATA LOCAL INFILE 'D:/Powerbi/PowerbiTraining.csv'
 INTO TABLE customer_data
 FIELDS TERMINATED BY ','
@@ -32,37 +28,29 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-![](/images/count1.jpg)
--- =========================================================
--- 4️⃣ CREATE CLEAN WORKING TABLE
--- =========================================================
-CREATE TABLE customer_table AS
-SELECT * FROM customer_data;
+-- Screenshot: images/count1.jpg
 
--- Verify data
+
+-- 4️⃣ CREATE WORKING TABLE
+CREATE TABLE customer_table AS
+SELECT * 
+FROM customer_data;
+
 SELECT * FROM customer_table;
 
 
--- =========================================================
--- 5️⃣ DATA CLEANING - REMOVE NULL CUSTOMER IDs
--- =========================================================
+-- 5️⃣ DATA CLEANING
 DELETE FROM customer_table
 WHERE CustomerID IS NULL;
 
 
--- =========================================================
 -- 6️⃣ HANDLE MISSING VALUES
--- =========================================================
--- Replace NULL values in TotalCharges with 0
 UPDATE customer_table
 SET TotalCharges = 0
 WHERE TotalCharges IS NULL;
 
 
--- =========================================================
--- 7️⃣ BASIC DATA VALIDATION
--- =========================================================
--- Check for remaining NULL values
+-- 7️⃣ DATA VALIDATION
 SELECT COUNT(*) AS null_customer_ids
 FROM customer_table
 WHERE CustomerID IS NULL;
@@ -72,58 +60,51 @@ FROM customer_table
 WHERE TotalCharges IS NULL;
 
 
--- =========================================================
--- 8️⃣ CREATE FILTERED DATASET FOR ANALYSIS
--- =========================================================
+-- 8️⃣ CREATE FILTERED DATA
 CREATE TABLE filterdata AS
 SELECT *
 FROM customer_table
 WHERE tenure > 3;
 
--- View filtered data
 SELECT * FROM filterdata;
 
 
--- =========================================================
--- 9️⃣ ANALYSIS QUERIES (FOR INSIGHTS)
--- =========================================================
+-- 9️⃣ ANALYSIS QUERIES
 
--- Total customers
-SELECT COUNT(*) AS total_customers FROM filterdata;
+-- Total Customers
+SELECT COUNT(*) AS total_customers 
+FROM filterdata;
 
--- Churn count
+-- Churn Distribution
 SELECT Churn, COUNT(*) AS count
 FROM filterdata
 GROUP BY Churn;
 
--- Average tenure
-SELECT AVG(tenure) AS avg_tenure FROM filterdata;
+-- Average Tenure
+SELECT AVG(tenure) AS avg_tenure 
+FROM filterdata;
 
--- Monthly charges analysis
+-- Monthly Charges
 SELECT 
     MIN(MonthlyCharges) AS min_charge,
     MAX(MonthlyCharges) AS max_charge,
     AVG(MonthlyCharges) AS avg_charge
 FROM filterdata;
 
--- Customer distribution by gender
+-- Gender Distribution
 SELECT Gender, COUNT(*) AS total
 FROM filterdata
 GROUP BY Gender;
 
--- High-risk churn customers (example logic)
+-- High-Risk Customers
 SELECT *
 FROM filterdata
 WHERE Churn = 'Yes'
-AND MonthlyCharges > 70;
+  AND MonthlyCharges > 70;
 
 
--- =========================================================
 -- 🔟 FINAL CHECK
--- =========================================================
-SELECT COUNT(*) AS final_dataset_count FROM filterdata;
+SELECT COUNT(*) AS final_dataset_count 
+FROM filterdata;
 
--- =========================================================
--- ✅ END OF SCRIPT
--- =========================================================
-
+-- END
