@@ -93,6 +93,9 @@ SELECT
     Screenshot:![](../images/Monthly charges.jpg)
 FROM filterdata;
 
+
+Screenshot: ![](../images/Monthlycharges.jpg)
+
 -- Gender Distribution
 SELECT Gender, COUNT(*) AS total
 FROM filterdata
