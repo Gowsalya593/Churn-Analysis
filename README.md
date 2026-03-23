@@ -19,6 +19,10 @@ To understand customer behavior and provide business insights that help reduce c
 - Subscription type analysis 
   ![](images/countoftenure.jpg)
   
+   ![](images/sumoftotalsubscription.jpg)
+
+  ![](images/countofcustomerid.jpg)
+  
 
 ## Output
 An interactive Power BI dashboard showing churn trends and actionable insights for business decision-making.
