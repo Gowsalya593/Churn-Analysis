@@ -90,9 +90,8 @@ SELECT
     MIN(MonthlyCharges) AS min_charge,
     MAX(MonthlyCharges) AS max_charge,
     AVG(MonthlyCharges) AS avg_charge
+    Screenshot: ![](../images/Monthly charges.jpg)
 FROM filterdata;
-
-Screenshot: ![](../images/Monthly charges.jpg)
 
 -- Gender Distribution
 SELECT Gender, COUNT(*) AS total
