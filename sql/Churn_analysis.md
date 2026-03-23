@@ -113,4 +113,6 @@ WHERE Churn = 'Yes'
 SELECT COUNT(*) AS final_dataset_count 
 FROM filterdata;
 
+Screenshot:![](../images/filterdata.jpg.jpg)
+
 -- END
