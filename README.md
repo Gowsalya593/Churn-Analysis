@@ -17,7 +17,8 @@ To understand customer behavior and provide business insights that help reduce c
 - Impact of tenure and usage on churn
 - Support calls vs churn relationship
 - Subscription type analysis 
-  ![](images/images.jpeg)
+  ![](images/countoftenure.jpg)
+  
 
 ## Output
 An interactive Power BI dashboard showing churn trends and actionable insights for business decision-making.
