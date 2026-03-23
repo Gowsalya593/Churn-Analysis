@@ -108,11 +108,12 @@ FROM filterdata
 WHERE Churn = 'Yes'
   AND MonthlyCharges > 70;
 
+Screenshot:![](../images/filterdata.jpg)
 
 -- 🔟 FINAL CHECK
 SELECT COUNT(*) AS final_dataset_count 
 FROM filterdata;
 -- END
 
-Screenshot:![](../images/filterdata.jpg.jpg)
+
 
