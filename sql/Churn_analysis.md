@@ -35,8 +35,9 @@ IGNORE 1 ROWS;
 CREATE TABLE customer_table AS
 SELECT * 
 FROM customer_data;
-
 SELECT * FROM customer_table;
+
+-- Screenshot: ![](../images/customertable.jpg)
 
 
 -- 5️⃣ DATA CLEANING
