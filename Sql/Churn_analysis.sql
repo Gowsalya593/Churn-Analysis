@@ -33,7 +33,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-![](images/Count_Screenshot.jpg)
+![](images/Count_Screenshot.Jpg)
 -- =========================================================
 -- 4️⃣ CREATE CLEAN WORKING TABLE
 -- =========================================================
