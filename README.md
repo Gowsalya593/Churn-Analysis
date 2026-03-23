@@ -1,4 +1,5 @@
 # Customer Churn Analysis
+  ![](images/Count_Screenshot.jpg)
 
 ## Project Overview
 This project analyzes customer churn to identify patterns and key factors influencing customer retention.
@@ -18,6 +19,6 @@ To understand customer behavior and provide business insights that help reduce c
 - Support calls vs churn relationship
 - Subscription type analysis 
   ![](images/images.jpeg)
-  ![](images/Count_Screenshot.jpg)
+
 ## Output
 An interactive Power BI dashboard showing churn trends and actionable insights for business decision-making.
