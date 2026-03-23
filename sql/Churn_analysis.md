@@ -97,6 +97,8 @@ SELECT Gender, COUNT(*) AS total
 FROM filterdata
 GROUP BY Gender;
 
+Screenshot: ![](../images/customertable.jpg)
+
 -- High-Risk Customers
 SELECT *
 FROM filterdata
