@@ -28,7 +28,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
--- Screenshot: ![](..images/count1.jpg)
+-- Screenshot: ![](../images/count1.jpg)
 
 
 -- 4️⃣ CREATE WORKING TABLE
