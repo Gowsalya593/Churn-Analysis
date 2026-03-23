@@ -1,5 +1,4 @@
 # Customer Churn Analysis
-  ![](images/Count_Screenshot.JPG)
 
 ## Project Overview
 This project analyzes customer churn to identify patterns and key factors influencing customer retention.
