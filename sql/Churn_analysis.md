@@ -92,6 +92,8 @@ SELECT
     AVG(MonthlyCharges) AS avg_charge
 FROM filterdata;
 
+Screenshot: ![](../images/Monthly charges.jpg)
+
 -- Gender Distribution
 SELECT Gender, COUNT(*) AS total
 FROM filterdata
