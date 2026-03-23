@@ -90,7 +90,7 @@ SELECT
     MIN(MonthlyCharges) AS min_charge,
     MAX(MonthlyCharges) AS max_charge,
     AVG(MonthlyCharges) AS avg_charge
-    Screenshot: ![](../images/Monthly charges.jpg)
+    Screenshot:![](../images/Monthly charges.jpg)
 FROM filterdata;
 
 -- Gender Distribution
@@ -98,7 +98,7 @@ SELECT Gender, COUNT(*) AS total
 FROM filterdata
 GROUP BY Gender;
 
-Screenshot: ![](../images/customertable.jpg)
+Screenshot:![](../images/customertable.jpg)
 
 -- High-Risk Customers
 SELECT *
